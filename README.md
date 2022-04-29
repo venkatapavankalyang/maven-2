@@ -1,32 +1,29 @@
-SonarQube Scanner for Maven
-===========================
+# SonarQube Basic Maven Example
 
-[![Build Status](https://api.cirrus-ci.com/github/SonarSource/sonar-scanner-maven.svg)](https://cirrus-ci.com/github/SonarSource/sonar-scanner-maven) [![Quality Gate Status](https://next.sonarqube.com/sonarqube/api/project_badges/measure?project=org.sonarsource.scanner.maven%3Asonar-maven-plugin&metric=alert_status)](https://next.sonarqube.com/sonarqube/dashboard?id=org.sonarsource.scanner.maven%3Asonar-maven-plugin)
+This simple Maven project is importing JaCoCo's coverage report.
+<br /><br />
 
+## Usage
 
-Have Question or Feedback?
---------------------------
+* Download SonarQube which matches with your Java version from [here](https://www.sonarqube.org/downloads/)
 
-For support questions ("How do I?", "I got this error, why?", ...), please head to the [SonarSource forum](https://community.sonarsource.com/c/help). There are chances that a question similar to yours has already been answered. 
+* Start the SonarQube server\
+**For Windows**\
+`YOUR_DIR_PATH\sonarqube\bin\windows-x86-xx\StartSonar.bat`\
+**For other operating systems like Linux/Ubuntu**\
+`YOUR_DIR_PATH/sonarqube/bin/[OS]/sonar.sh console`
 
-Be aware that this forum is a community, so the standard pleasantries ("Hi", "Thanks", ...) are expected. And if you don't get an answer to your thread, you should sit on your hands for at least three days before bumping it. Operators are not standing by. :-)
+* Once the SonarQube Server is up and running then you can visit the SonarQube Dashboard at http://localhost:9000/dashboard/ \
+Default System administrator credentials are **admin/admin**
 
+* Build the project, execute all the tests and analyze the project with SonarQube Scanner for Maven\
+**`mvn clean verify sonar:sonar`**\
+or\
+**`mvn clean install sonar:sonar`**
+        
+* Click on the project name to see the code quality inspection
+<br />
 
-Contributing
-------------
+## Documentation
 
-If you would like to see a new feature, please create a new thread in the forum ["Suggest new features"](https://community.sonarsource.com/c/suggestions/features).
-
-Please be aware that we are not actively looking for feature contributions. The truth is that it's extremely difficult for someone outside SonarSource to comply with our roadmap and expectations. Therefore, we typically only accept minor cosmetic changes and typo fixes.
-
-With that in mind, if you would like to submit a code contribution, please create a pull request for this repository. Please explain your motives to contribute this change: what problem you are trying to fix, what improvement you are trying to make.
-
-Make sure that you follow our [code style](https://github.com/SonarSource/sonar-developer-toolset#code-style) and all tests are passing (Travis build is executed for each pull request).
-
-
-License
--------
-
-Copyright 2011-2022 SonarSource.
-
-Licensed under the [GNU Lesser General Public License, Version 3.0](http://www.gnu.org/licenses/lgpl.txt)
+[SonarScanner for Maven](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-maven/)
